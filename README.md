@@ -19,7 +19,7 @@
 
 # 📖 [React-reflection] <a name="about-project"></a>
 
-**React-reflection** is a package for adding "a reflection mask" cover a react component or an built-in element. Please notice about the real size of the component you wanna make it reflective.
+**React-reflection** is a package for adding "a reflection mask" covering a react component or an built-in element|container. Please notice about the real size of the component you want to make it reflective.
 
 **- <i>This package will be public soon.</i>**
 
