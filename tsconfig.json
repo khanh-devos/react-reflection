@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // Added
+    "jsx": "react",                 /* Transform JSX into React code */
+    "module": "ESNext",             /* Generate modern JS modules for our library */          
+    "declaration": true,            /* Output "**.d.ts" file for our library types */
+    "declarationDir": "types",      /* Where to place the .d.ts files */
+    "sourceMap": true,              /* Mapping JS code back to its TS file origins for debugging */
+
+    "outDir": "dist",               /* Directory where the project will be generated */
+    "moduleResolution": "node",     /* Follow node.js rules for finding modules */
+
+    "allowSyntheticDefaultImports": true,     /* Assumes default exports if none are created manually */
+    "emitDeclarationOnly": true,    /* Don't generate JS (rollup will do that) only export type declarations */
+
+    // Default 
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    
+    /* Language and Environment */
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+
+    /* Modules */
+    // "module": "commonjs",                                /* Specify what module code 
+
+    /* JavaScript Support */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+
+    /* Type Checking */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    
+
+    /* Completeness */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  }
+}
