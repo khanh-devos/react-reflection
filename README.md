@@ -62,7 +62,7 @@
     @khanh-devos:registry=https://npm.pkg.github.com/
     //npm.pkg.github.com/:_authToken=GIT_TOKEN
 ```
-- Notice: please take the GIT_TOKEN from my DEMO homepage above.
+- Notice: please take the GIT_TOKEN from my [linkedIn](https://www.linkedin.com/in/khanh-dom/).
 
 - npm install @khanh-devos/react-reflection
 ```sh
