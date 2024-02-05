@@ -5,6 +5,9 @@ import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" };
 
 
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import terser from "@rollup/plugin-terser";
+
 export default [
   {
     input: "src/index.ts",
@@ -21,9 +24,16 @@ export default [
       },
     ],
     plugins: [
+      // NEW For optimizing
+      peerDepsExternal(),
+
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+
+      // NEW For optimizing
+      terser(), 
+
     ],
   },
   {
