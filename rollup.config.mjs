@@ -5,9 +5,13 @@ import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" };
 
 
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import terser from "@rollup/plugin-terser";
+
 export default [
   {
     input: "src/index.ts",
+    
     output: [
       {
         file: packageJson.main,
@@ -20,15 +24,29 @@ export default [
         sourcemap: true,
       },
     ],
+
     plugins: [
+      // NEW For optimizing
+      peerDepsExternal(),
+
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+
+      typescript({ 
+        exclude: ["src/components/__tests__/", "src/stories/"],
+        tsconfig: "./tsconfig.json",
+      }),
+
+      // NEW For optimizing
+      terser(), 
+
     ],
   },
+
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
   },
+
 ];
