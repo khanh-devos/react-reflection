@@ -79,6 +79,7 @@ import { Reflection } from '@khanh-devos/react-reflection';
 </Reflection>
 
 ```
+- Notice: the width and height of the "YourComponent" should be 100% or fixex numbers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
