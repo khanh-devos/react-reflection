@@ -19,7 +19,7 @@
 
 # 📖 [React-reflection] <a name="about-project"></a>
 
-**React-reflection** is a package for adding "a reflection mask" covering a react component or an built-in element|container. Please notice about the real size of the component you want to make it reflective.
+**React-reflection** is a package for adding "a reflection mask" covering a react component or an built-in element|container. While trying it, please notice about the real size of the component you want to make it reflective; its width and height should be '100%' or fixed numbers.
 
 **- <i>This package will be public soon.</i>**
 
@@ -62,7 +62,7 @@
     @khanh-devos:registry=https://npm.pkg.github.com/
     //npm.pkg.github.com/:_authToken=GIT_TOKEN
 ```
-- Notice: please take the GIT_TOKEN by messaging me at my [linkedIn](https://www.linkedin.com/in/khanh-dom/).
+- Notice: please take the GIT_TOKEN from [here](https://docs.google.com/document/d/1DQ3h3FhLoQGRq5BTiz3wC5BlYtGrlb9l9B6AtlRYMRQ/edit?usp=sharing)
 
 - npm install @khanh-devos/react-reflection
 ```sh
