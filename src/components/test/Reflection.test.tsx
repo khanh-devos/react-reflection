@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Reflection from "../Reflection";
+import Reflection from "../Reflection/Reflection";
 
 
 

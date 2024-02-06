@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ReflectionProps, ReflectionState } from "./types";
 
-import {showReflection} from "./utils/showLight";
+import {showLight, showSun} from "./utils/showReflection";
 import { createReflectingChild } from "./createReflectingItem";
 
 
@@ -18,7 +18,8 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
     margin: 'auto',
   }
 
-  public lightRef: React.RefObject<HTMLDivElement>;
+  public readonly lightRef: React.RefObject<HTMLDivElement>;
+  public readonly sunRef: React.RefObject<HTMLDivElement>;
 
   constructor(props: ReflectionProps) {
     super(props);
@@ -27,6 +28,7 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
     };
     
     this.lightRef = React.createRef();
+    this.sunRef = React.createRef();
   }
 
 
@@ -40,29 +42,18 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
   
   public componentDidMount(): void {
     window.addEventListener('mousemove', (event) => {
-      showReflection(event, this);
+      if (this.props.light) showLight(event, this);
+      if (this.props.sun) showSun(event, this);
     });
 
     window.addEventListener('resize', this.checkMobileView)
     this.checkMobileView();
   }
 
-
-  // const createSun = () => {
-  //   return (<div 
-  //     style={{
-  //       position: 'absolute', top: '0', left: '0',
-  //       width: '100%', height: '100%',
-  //       zIndex: '200',
-  //       transform: 'translateX(100px)',
-  //       backgroundImage: 'radial-gradient(circle, whitesmoke 3%, lavender 4%, transparent 20%)',
-  //     }}  
-  //   ></div>)
-  // } 
+   
 
   
   render() {
-
     const items = React.Children.toArray(this.props.children);
 
     return <>
@@ -71,7 +62,7 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
           // if (i === 0)
           if (this.state.isMobileView) return item;
 
-          return createReflectingChild(item, this, this.lightRef);
+          return createReflectingChild(item, this);
           
         })
       }

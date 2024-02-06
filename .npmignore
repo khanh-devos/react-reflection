@@ -1,1 +1,4 @@
-README.md
+./README.md
+src/components/test/
+src/stories/
+.npmrc
