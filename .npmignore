@@ -1,4 +1,7 @@
 ./README.md
-src/components/test/
-src/stories/
+
+./src/components/test123/
+
+./src/stories123/
+
 .npmrc
