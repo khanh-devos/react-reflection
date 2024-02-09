@@ -3,8 +3,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/khanh-devos"
   },
-  "version": "1.0.33",
-  "description": "Add reflecting feature",
+  "version": "1.0.36",
+  "description": "Make a react component reflective",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -28,14 +28,6 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@storybook/addon-essentials": "^7.6.12",
-    "@storybook/addon-interactions": "^7.6.12",
-    "@storybook/addon-links": "^7.6.12",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.12",
-    "@storybook/react": "^7.6.12",
-    "@storybook/react-webpack5": "^7.6.12",
-    "@storybook/test": "^7.6.12",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.51",

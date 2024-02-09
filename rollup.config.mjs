@@ -33,7 +33,7 @@ export default [
       commonjs(),
 
       typescript({ 
-        exclude: ["src/components/__tests__/", "src/stories/"],
+        exclude: ["src/components/tests"],
         tsconfig: "./tsconfig.json",
       }),
 
