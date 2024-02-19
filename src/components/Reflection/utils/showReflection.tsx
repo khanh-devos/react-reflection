@@ -36,13 +36,18 @@ export const showLight = (
   
     
     reflection.lightRef.current.onmouseenter = () => {
-      if (reflection.lightRef.current) reflection.lightRef.current.style.scale = '0';
+      if (reflection.lightRef.current) {
+        reflection.lightRef.current.style.scale = '0';
+      }
     };
 
     reflection.lightRef.current.onmouseout = () => {
       if (reflection.lightRef.current && reflection.lightRef.current.style.scale !== '0') return;
+
       setTimeout(() => {
-        if (reflection.lightRef.current) reflection.lightRef.current.style.scale = '1' 
+        if (reflection.lightRef.current) {
+          reflection.lightRef.current.style.scale = '1';
+        }
       }, 2000);
     };
 
@@ -70,7 +75,7 @@ export const showSun = (
 ) => {
   
   if (reflection.state.isMobileView) {
-    if (reflection.lightRef.current) reflection.lightRef.current.remove()
+    if (reflection.sunRef.current) reflection.sunRef.current.remove();
     return;
   }
 
@@ -90,16 +95,21 @@ export const showSun = (
 
     return;
   }
-  
+
   
   reflection.sunRef.current.onmouseenter = () => {
-    if (reflection.sunRef.current) reflection.sunRef.current.style.scale = '0';
+    if (reflection.sunRef.current) {
+      reflection.sunRef.current.style.scale = '0';
+    }
   };
 
   reflection.sunRef.current.onmouseout = () => {
     if (reflection.sunRef.current && reflection.sunRef.current.style.scale !== '0') return;
+
     setTimeout(() => {
-      if (reflection.sunRef.current) reflection.sunRef.current.style.scale = '1' 
+      if (reflection.sunRef.current) {
+        reflection.sunRef.current.style.scale = '1';
+      }
     }, 2000);
   };
 
@@ -110,5 +120,46 @@ export const showSun = (
     reflection.sunRef.current.style.background = `radial-gradient(circle, whitesmoke 7.5%, ${reflection.props.color} 8%, transparent 20%)`
   }
   
+
+}
+
+export const showBorder = (
+  event: MouseEvent,
+  reflection: Reflection,
+) => {
+  
+  if (reflection.state.isMobileView) {
+    // if (reflection.borderPathContainerRef.current) reflection.borderPathContainerRef.current.remove()
+    return;
+  }
+
+  if (!reflection.borderPathContainerRef.current) return;
+
+  const WIDTH = window.innerWidth || 1500;
+
+
+  const a = Number(event.clientX)/WIDTH * 100;
+  
+  reflection.borderPathContainerRef.current.onmouseenter = () => {
+    if (reflection.borderPathContainerRef.current) {
+      reflection.borderPathContainerRef.current.style.scale = '0';
+    }
+  };
+
+  reflection.borderPathContainerRef.current.onmouseout = () => {
+    if (reflection.borderPathContainerRef.current && 
+      reflection.borderPathContainerRef.current.style.scale !== '0') return;
+
+    setTimeout(() => {
+      
+      reflection.scalePath();
+
+    }, 2000);
+  };
+
+  // border shining a: 0 -> 50 -> 100
+  // shining      -10000 -> 0   -> 10000 => 
+  // (a - 50) * 2000
+  if (reflection.borderShineRef.current) reflection.borderShineRef.current.setAttribute('x', `${(a - 50) * 500}`);
 
 }

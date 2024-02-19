@@ -69,17 +69,33 @@
 import { Reflection } from '@khanh-devos/react-reflection';
 
 <Reflection
-  color: 'white',
-  sideColor: 'black',
-  angle: '100',
-  borderRadius: '10px',
-  margin: 'auto',
+  color='white',
+  sideColor='black',
+  angle='100',
+  margin='auto',
+  borderRadius='10px'
 >
   <YourComponent />
 </Reflection>
 
 ```
 - Notice: the width and height of the "YourComponent" should be 100% or fixed numbers.
+
+## Specific Props
+| Name        | Type    | Default   | Description                 |
+|-------------|---------|-----------|-----------------------------|
+| light       | boolean | true      | show/hide reflective light  |
+| color       | string  | 'orange'  | custom reflective light color |
+| sideColor   | string  | 'transparent'  | custom reflective light side color |
+| sun         | boolean | false     | show/hide reflective sun    |
+| border      | boolean | false     | show/hide reflective border |
+| borderRadius| string  | '0px' or '0%'| Add border radius for lighting & border |
+| borderColor | string  | 'skyblue' | custom reflective border color |
+| borderWidth | number  | 5         | reflective border width |
+| borderRadiusRatio | number | 1    | adjust border radius  |
+| borderPathScale | number | 2.2    | scale up reflective border |
+| borderShiningColor | string | '#c2d9ff' | shining color on the reflective border |
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,6 +117,7 @@ import { Reflection } from '@khanh-devos/react-reflection';
 
 - **Optional reflective border**
 - **Optional sun**
+- **Optional SSR**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
