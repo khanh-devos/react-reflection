@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import * as React from 'react';
-import Reflection from './Reflection';
+import Reflection from '../Reflection';
 
 const createBorderSVG = (reflection: Reflection): React.ReactSVGElement => {
   const feMergeNode1 = React.createElement('feMergeNode', {
@@ -66,7 +66,7 @@ const createBorderSVG = (reflection: Reflection): React.ReactSVGElement => {
 
   const feGaussianBlur = React.createElement('feGaussianBlur', {
     in: "SourceAlpha",
-    stdDeviation: "4",
+    stdDeviation: '4',
     result: "blur",
     key: uuidv4()
   });
