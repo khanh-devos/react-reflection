@@ -90,15 +90,6 @@ const createBorderSVG = (reflection: Reflection): React.ReactSVGElement => {
     key: uuidv4()
   }, [filter]);
 
-  const rect = React.createElement('rect', { 
-    x: "1",
-    y: "1", 
-    width: "100%",
-    height: "100%",
-    fill: "grey",
-    key: uuidv4()
-  });
-
   const path = React.createElement(
     'path', 
     { 
@@ -164,8 +155,6 @@ export const createReflectingChild = (
   }
 
   if (reflection.props.border) {
-
-    
     const svg: React.ReactSVGElement = createBorderSVG(reflection);
 
     reflectionItems.push(React.createElement(

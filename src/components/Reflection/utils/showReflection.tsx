@@ -14,40 +14,30 @@ export const showLight = (
     if (!reflection.lightRef.current) return;
 
     const WIDTH = window.innerWidth || 1500;
-  
-  
     const a = Number(event.clientX)/WIDTH * 100;
     
-  
     if ((a < 30 || a > 70)) {
 
       reflection.lightRef.current.style.background = 'none';
       // hiding underground
       reflection.lightRef.current.style.zIndex = '-1';  
-
       return;
     }
     
-  
     const b = a * 1;
     const c = a * 1.5;
     const d = a * 2;
     const e = a * 3;
   
-    
     reflection.lightRef.current.onmouseenter = () => {
-      if (reflection.lightRef.current) {
-        reflection.lightRef.current.style.scale = '0';
-      }
+      reflection.lightRef.current!.style.scale = '0';
     };
 
     reflection.lightRef.current.onmouseout = () => {
       if (reflection.lightRef.current && reflection.lightRef.current.style.scale !== '0') return;
 
       setTimeout(() => {
-        if (reflection.lightRef.current) {
-          reflection.lightRef.current.style.scale = '1';
-        }
+        reflection.lightRef.current!.style.scale = '1';
       }, 2000);
     };
 
@@ -61,12 +51,9 @@ export const showLight = (
     ${reflection.props.color} ${c}%, 
     ${reflection.props.sideColor} ${d}%, 
     ${reflection.props.sideColor} ${e}%)`;
-        
-  
     
     // if (reflection.props.sun) reflection.lightRef.current.style.background = 'radial-gradient(circle, whitesmoke 3%, lavender 4%, transparent 20%)';
     
-  
 }
 
 export const showSun = (
@@ -75,15 +62,13 @@ export const showSun = (
 ) => {
   
   if (reflection.state.isMobileView) {
-    if (reflection.sunRef.current) reflection.sunRef.current.remove();
+    reflection.sunRef.current!.remove();
     return;
   }
 
   if (!reflection.sunRef.current) return;
 
   const WIDTH = window.innerWidth || 1500;
-
-
   const a = Number(event.clientX)/WIDTH * 100;
   
 
@@ -98,18 +83,14 @@ export const showSun = (
 
   
   reflection.sunRef.current.onmouseenter = () => {
-    if (reflection.sunRef.current) {
-      reflection.sunRef.current.style.scale = '0';
-    }
+      reflection.sunRef.current!.style.scale = '0';
   };
 
   reflection.sunRef.current.onmouseout = () => {
     if (reflection.sunRef.current && reflection.sunRef.current.style.scale !== '0') return;
 
     setTimeout(() => {
-      if (reflection.sunRef.current) {
-        reflection.sunRef.current.style.scale = '1';
-      }
+      reflection.sunRef.current!.style.scale = '1';
     }, 2000);
   };
 
@@ -129,21 +110,17 @@ export const showBorder = (
 ) => {
   
   if (reflection.state.isMobileView) {
-    // if (reflection.borderPathContainerRef.current) reflection.borderPathContainerRef.current.remove()
+    reflection.borderPathContainerRef.current!.remove()
     return;
   }
 
   if (!reflection.borderPathContainerRef.current) return;
 
   const WIDTH = window.innerWidth || 1500;
-
-
   const a = Number(event.clientX)/WIDTH * 100;
   
   reflection.borderPathContainerRef.current.onmouseenter = () => {
-    if (reflection.borderPathContainerRef.current) {
-      reflection.borderPathContainerRef.current.style.scale = '0';
-    }
+    reflection.borderPathContainerRef.current!.style.scale = '0';
   };
 
   reflection.borderPathContainerRef.current.onmouseout = () => {
@@ -151,9 +128,7 @@ export const showBorder = (
       reflection.borderPathContainerRef.current.style.scale !== '0') return;
 
     setTimeout(() => {
-      
       reflection.scalePath();
-
     }, 2000);
   };
 
