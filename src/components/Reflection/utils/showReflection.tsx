@@ -110,7 +110,9 @@ export const showBorder = (
 ) => {
   
   if (reflection.state.isMobileView) {
-    reflection.borderPathContainerRef.current!.remove()
+    if (reflection.borderPathContainerRef.current) {
+      reflection.borderPathContainerRef.current.remove()
+    }
     return;
   }
 
