@@ -19,7 +19,7 @@
 
 # 📖 [React-reflection] <a name="about-project"></a>
 
-**React-reflection** is a package for adding "a reflection mask" covering a react component or an built-in element. While trying it, please notice about the real size of the component you want to make it reflective; its width and height should be '100%' or fixed numbers.
+**React-reflection** is a package for adding "a reflection mask and border" covering a react component or a built-in HTML element (div, button...). While trying it, please notice about the real size of the component you want to make it reflective; its width and height should be '100%' or fixed numbers.
 
 **- <i>This package will be public soon.</i>**
 
@@ -39,7 +39,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Make a component reflective**
+- **Reflective cover**
+- **Reflective border**
 - **Auto-off-on as mouse entering or leaving**
 - **Custom colors**
 
@@ -81,7 +82,7 @@ import { Reflection } from '@khanh-devos/react-reflection';
 ```
 - Notice: the width and height of the "YourComponent" should be 100% or fixed numbers.
 
-## Specific Props
+### Specific Props
 | Name        | Type    | Default   | Description                 |
 |-------------|---------|-----------|-----------------------------|
 | light       | boolean | true      | show/hide reflective light  |

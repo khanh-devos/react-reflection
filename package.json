@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/khanh-devos"
   },
-  "version": "1.0.37",
+  "version": "1.0.39",
   "description": "Make a react component reflective",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
