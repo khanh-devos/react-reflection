@@ -78,7 +78,6 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
   }
 
   public scalePath() {
-    
     if (!this.borderPathContainerRef.current) return;
 
     const thick = this.props.borderWidth || BORDER_WIDTH;
@@ -93,8 +92,7 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
   public pathShadow() {
     if (!this.borderPathRef.current || !this.borderPathContainerRef.current) return;
 
-    this.borderPathContainerRef.current.style.borderRadius = this.props.borderRadius || 'inherit';
-    
+    this.borderPathContainerRef.current.style.borderRadius = this.props.borderRadius || 'inherit';    
     
   }
 
@@ -112,11 +110,7 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
     height = this.borderPathContainerRef.current.clientHeight;
       
     const thick = this.props.borderWidth || BORDER_WIDTH;
-
     this.borderPathRef.current.setAttribute('stroke-width', `${thick}`);
-
-
-    const d = 'M3,50 C3,10 10,3 50,3 L250,3 C290,3 297,10 297,50 L297,250 C297,290 290,297 250,297 L50,297 C10,297 3,290 3,250 L3,50';
 
     let borderRx: number = 0;
     let borderRy: number = 0;
@@ -136,7 +130,6 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
     const startCurveXPoint = Math.min(width/2, borderRx), 
       startCurveYPoint = Math.min(height/2, borderRy);
 
-
     // imagine we have a rectangular: width: 400, height: 300
     // const AB = "M3,50 C3,10 10,3 50,3 L350,3";
     const deno = 2; 
@@ -144,8 +137,6 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
 
     // const BC = "C390,3 397,10 397,50 L397,250 ";
     const BC = `C${width-Rx},${thick/deno} ${width-thick/deno},${Ry} ${width-thick/deno},${startCurveYPoint} L${width-thick/deno},${height-startCurveYPoint}`;
-
-
 
     // const CD = "C397,290 390,297 350,297 L50,297 ";
     const CD = `C${width-thick/deno},${height-Ry} ${width-Rx},${height-thick/deno} ${width-startCurveXPoint},${height-thick/deno} L${startCurveXPoint},${height-thick/deno}`;
@@ -155,17 +146,12 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
 
     this.borderPathRef.current.setAttribute('d', AB+BC+CD+DA);
       
-
-    
   }
   
   public componentDidUpdate(): void {
-
     if (this.borderPathRef.current && this.borderPathContainerRef.current) {
       this.resizePathBorder();
     }
-    
-    
   }
   
   render() {
@@ -174,9 +160,7 @@ class Reflection extends React.Component<ReflectionProps, ReflectionState> {
     return <>
       {
         items.map((item: React.ReactElement|any) => {
-          // if (i === 0)
           if (this.state.isMobileView) return item;
-
           return createReflectingChild(item, this);
           
         })
